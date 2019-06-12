@@ -22,21 +22,14 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-<<<<<<< HEAD
-# Visual Studio 2015/2017 cache/options directory
-=======
 # Visual Studio 2015 cache/options directory
->>>>>>> Add .gitignore and .gitattributes.
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
-<<<<<<< HEAD
 # Visual Studio 2017 auto generated files
 Generated\ Files/
 
-=======
->>>>>>> Add .gitignore and .gitattributes.
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
@@ -50,7 +43,6 @@ TestResult.xml
 [Rr]eleasePS/
 dlldata.c
 
-<<<<<<< HEAD
 # Benchmark Results
 BenchmarkDotNet.Artifacts/
 
@@ -64,28 +56,16 @@ artifacts/
 StyleCopReport.xml
 
 # Files built by Visual Studio
-=======
-# DNX
-project.lock.json
-project.fragment.lock.json
-artifacts/
-
->>>>>>> Add .gitignore and .gitattributes.
 *_i.c
 *_p.c
 *_i.h
 *.ilk
 *.meta
 *.obj
-<<<<<<< HEAD
 *.iobj
 *.pch
 *.pdb
 *.ipdb
-=======
-*.pch
-*.pdb
->>>>>>> Add .gitignore and .gitattributes.
 *.pgc
 *.pgd
 *.rsp
