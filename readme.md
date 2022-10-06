@@ -1,9 +1,24 @@
 # TDD Workshop
 
-## Git url: 
+## Preparation
 
-- https://github.com/daanwissing/tdd-workshop-csharp.git  
+### Requirements
+- .NET 6
+- Visual Studio (code)
 
+### Run
+```
+$ git clone https://github.com/daanwissing/tdd-workshop-csharp.git
+$ cd tdd-workshop-csharp
+$ dotnet test
+```
+or
+* Open Visual Studio
+* Clone a repository
+* Enter https://github.com/daanwissing/tdd-workshop-csharp.git 
+* Click 'Clone'
+* 'Test' -> 'Test Explorer'
+* Click 'Run All Tests' (double green arrow)
 ## Tennis game requirement: 
 
 > Implement a function that, given a tennis game, prints out the current score of the game.
@@ -17,7 +32,7 @@
 ## Tennis game rules:
 
 1.	Players start with zero points each game. Having zero points in a game is denote as “love”.
-2.	When both players have the same score, the notation for this is “`\<score>` all”.
+2.	When both players have the same score, the notation for this is “`<score>` all”.
 3.	When a player has 1 point, the score is noted as “fifteen”
 4.	When a player has 2 points, the score is noted as “thirty”
 5.	When a player has 3 points, the score is noted as “forty”
