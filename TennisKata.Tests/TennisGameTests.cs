@@ -70,6 +70,126 @@ namespace TennisKata.Tests
             result.Should().Be("Deuce");
         }
 
+        [Test]
+        public void GivenScore_WhenResetGame_ScoreIsLoveAll()
+        {
+            // Arrange
+            SetScore(1, 3);
+
+            // Act
+            game.Reset();
+            var result = game.PrintScore();
+
+            // Assert
+            result.Should().Be("Love All");
+        }
+
+        [Test]
+        public void GivenScore_WhenChallengeSustained_ScoreReverted()
+        {
+            //
+            game.Player1Scores();
+            game.Challenge(true);
+
+            // Act
+            var result = game.PrintScore();
+
+            // Assert
+            result.Should().Be("Love All");
+        }
+
+
+        [Test]
+        public void GivenScore_WhenChallengeRejected_ScoreNotReverted()
+        {
+            //
+            game.Player1Scores();
+            game.Challenge(false);
+
+            // Act
+            var result = game.PrintScore();
+
+            // Assert
+            result.Should().Be("Fifteen Love");
+        }
+
+        [Test]
+        public void GivenP1ScoreAndNoChallenges_WhenChallenge_ScoreNotReverted()
+        {
+            //
+            game.Player1Scores();
+            game.Challenge(false);
+            game.Player1Scores();
+            game.Challenge(false);
+
+            // Act
+            var result = game.PrintScore();
+
+            // Assert
+            result.Should().Be("Thirty Love");
+        }
+
+        [Test]
+        public void GivenP1ScoreAndNoChallenges_WhenChallengeSustained_ScoreNotReverted()
+        {
+            //
+            game.Player1Scores();
+            game.Challenge(false);
+            game.Player1Scores();
+            game.Challenge(true);
+
+            // Act
+            var result = game.PrintScore();
+
+            // Assert
+            result.Should().Be("Thirty Love");
+        }
+
+
+        [Test]
+        public void GivenP2ScoreAndNoChallenges_WhenChallengeSustained_ScoreNotReverted()
+        {
+            //
+            game.Player2Scores();
+            game.Challenge(false);
+            game.Player2Scores();
+            game.Challenge(true);
+
+            // Act
+            var result = game.PrintScore();
+
+            // Assert
+            result.Should().Be("Love Thirty");
+        }
+
+        [Test]
+        public void GivenP2Wins_WhenChallengeSustained_ScoreReverted()
+        {
+            // Arrange
+            SetScore(0, 4);
+
+            // Act
+            game.Challenge(true);
+            var result = game.PrintScore();
+
+            // Assert
+            result.Should().Be("Love Forty");
+        }
+
+        [Test]
+        public void GivenGameWinner_WhenResetGame_ScoreIsLoveAll()
+        {
+            // Arrange
+            SetScore(1, 4);
+
+            // Act
+            game.Reset();
+            var result = game.PrintScore();
+
+            // Assert
+            result.Should().Be("Love All");
+        }
+
         private void SetScore(int scorePlayer1, int scorePlayer2)
         {
             for (int i = 0; i < scorePlayer1; i++)
